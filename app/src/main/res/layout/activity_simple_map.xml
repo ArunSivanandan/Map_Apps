@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/bt_draw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Draw Path"
+        android:filterTouchesWhenObscured="true" />
+
+    <Button
+        android:id="@+id/bt_street"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/bt_draw"
+        android:text="Start navigation"
+        android:filterTouchesWhenObscured="true" />
+
+    <Button
+        android:id="@+id/bt_show_street"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/bt_street"
+        android:text="Show street"
+        android:filterTouchesWhenObscured="true" />
+
+    <fragment
+        android:id="@+id/streetviewpanorama"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/bt_draw"
+        android:layout_above="@+id/center_line"
+        class="com.google.android.gms.maps.SupportStreetViewPanoramaFragment" />
+
+    <View
+        android:id="@+id/center_line"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"/>
+
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/center_line"
+        class="com.google.android.gms.maps.SupportMapFragment" />
+
+</RelativeLayout>
